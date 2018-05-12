@@ -1,0 +1,14 @@
+<div id="professor_subjects"></div>
+
+<script type="text/javascript">
+  $(function() {
+    window.router = new Edukasyon.Routers.ProfessorSubjectsRouter(
+      {
+        professorSubjects: <%= @professor_subjects.to_json.html_safe -%>,
+        subjects: <%= @subjects.to_json.html_safe -%>,
+        professors: <%= @professors.to_json.html_safe -%>
+      });
+    Backbone.history.stop();
+    Backbone.history.start();
+  });
+</script>

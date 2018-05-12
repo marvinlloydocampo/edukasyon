@@ -15,5 +15,10 @@
 //= require ratyrate
 //= require bootstrap-sprockets
 //= require rails-ujs
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/edukasyon
 //= require_tree .
 

@@ -1,12 +1,37 @@
 <p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-
-  <% @subject.professor_subjects.each do |professor_subject| %>
-    <% professor = professor_subject.professor %>
-    <h6><%= professor.full_name %></h6>
-    Overall Rate: <%= rating_for professor_subject, "overall_rate", disable_after_rate: false %>
-
+  <h2><strong><%= @subject.name %></strong></h2>
+  <% if @subject.professor_subjects.present? %>
+    <h3>List of Professor Teaching this Class</h3>
+    <% @subject.professor_subjects.each do |professor_subject| %>
+      <% professor = professor_subject.professor %>
+      <h4><%= professor.full_name %></h4>
+      Overall Rating: <%= rating_for professor_subject, "overall_rate", disable_after_rate: false %>
+      <div class="rate-description-container">
+        <label class="form-control-label" for="student_email">Rate Description</label>
+        <input class="form-control" value="<%= professor_subject.description %>" data-id="<%= professor_subject.id %>" name="student[email]" id="student_email" data-user-id="<%= current_student.id %>">
+      </div>
+    <% end %>
+  <% else %>
+    <h3>No List of Professor Teaching this Class</h3>
   <% end %>
 </p>
 <%= link_to 'Back', root_path %>
+
+<script>
+  $("input").blur(function(){
+      $.ajax({
+        type: "PUT",
+        url: "/professor_subjects/" + $(this).attr('data-id') ,
+        data: {
+          professor_subject: {
+            id: $(this).attr('data-id'),
+            description: $(this).val(),
+            user_id: $(this).attr('data-user-id')
+          }
+        },
+        dataType: "script",
+        callback: null
+      });
+    return false;
+  });
+</script>

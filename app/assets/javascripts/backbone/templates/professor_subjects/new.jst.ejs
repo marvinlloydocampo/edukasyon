@@ -1,0 +1,29 @@
+<h1>New professor_subject</h1>
+
+<form id="new-professor_subject" name="professor_subject">
+
+  <div class="field">
+    <label for="subject_id"> Class Name:</label>
+    <select id="subject_id" name="subject_id" value="<%= model.subject_id() %>">
+        <% subjects.each(function(subject) { %>
+            <option value="<%= subject.id %>"><%= subject.name() %></option>
+        <% }); %>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="professor_id"> Professor Name:</label>
+    <select id="professor_id" name="professor_id" value="<%= model.professor_id() %>">
+        <% professors.each(function(professor) { %>
+            <option value="<%= professor.id %>"><%= professor.full_name() %></option>
+        <% }); %>
+    </select>
+  </div>
+
+  <div class="actions">
+    <input type="submit" value="Link Class to Professor" />
+  </div>
+
+</form>
+
+<a href="#/index">Back</a>
