@@ -1,3 +1,5 @@
 class Professor < ApplicationRecord
-  has_and_belongs_to_many :subjects
+  ratyrate_rateable "overall_rate"
+  has_many :professor_subjects
+  has_many :subjects, through: :professor_subjects
 end

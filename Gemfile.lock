@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/marvinlloydocampo/ratyrate.git
+  revision: 9909f99fb25bedcf3e7b1fa41909302bbc8e7044
+  specs:
+    ratyrate (1.2.2.alpha)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -231,6 +237,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.6)
   rails-backbone
+  ratyrate!
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form

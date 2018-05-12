@@ -41,6 +41,7 @@ gem 'simple_form'
 gem 'awesome_print', require: "ap"
 gem 'pry'
 gem "rails-backbone"
+gem 'ratyrate', github: 'marvinlloydocampo/ratyrate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
