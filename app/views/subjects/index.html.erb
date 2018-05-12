@@ -1,14 +1,23 @@
-<h1 class="column">Classes</h1>
-<div class="column">
-  <ul class="subject-grid no-bullet row">
+<h1>Classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
     <% @subjects.each do |subject| %>
-      <li class="large-3 medium-4 small-12 column">
-        <div class="movie-card padly">
-          <%= link_to subject, class: "poster" do %>
-            <%= subject.name %>
-          <% end %>
-        </div>
-      </li>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= link_to 'Show', subject %></td>
+        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </ul>
-</div>
+  </tbody>
+</table>
+
+<br>

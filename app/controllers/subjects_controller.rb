@@ -1,13 +1,10 @@
 class SubjectsController < ApplicationController
+  before_action :authenticate_student!
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   # GET /subjects
   # GET /subjects.json
   def index
-    unless current_student
-      redirect_to new_student_registration_path
-      return
-    end
     @subjects = Subject.all
   end
 

@@ -1,0 +1,14 @@
+<h1 class="column">Classes</h1>
+<div class="column">
+  <ul class="subject-grid no-bullet row">
+    <% @subjects.each do |subject| %>
+      <li class="large-3 medium-4 small-12 column">
+        <div class="movie-card padly">
+          <a class="poster" href="/home/<%= subject.id %>">
+            <%= subject.name %>
+          </a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @subject.name %>
+
+  <% @subject.professor_subjects.each do |professor_subject| %>
+    <% professor = professor_subject.professor %>
+    <h6><%= professor.full_name %></h6>
+    Overall Rate: <%= rating_for professor_subject, "overall_rate", disable_after_rate: false %>
+
+  <% end %>
+</p>
+<%= link_to 'Back', root_path %>
