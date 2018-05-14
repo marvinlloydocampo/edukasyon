@@ -1,14 +1,15 @@
-<h1 class="column">Classes</h1>
-<div class="column">
-  <ul class="subject-grid no-bullet row">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h2>Classes</h2></div>
+
+  <!-- Table -->
+  <table class="table" id="subjects-table">
     <% @subjects.each do |subject| %>
-      <li class="large-3 medium-4 small-12 column">
-        <div class="subject-card padly">
-          <a class="poster" href="/home/<%= subject.id %>">
-            <%= subject.name %>
-          </a>
-        </div>
-      </li>
+      <tr>
+        <td>
+          <a href="/home/<%= subject.id %>"><%= subject.name %></a>
+        </td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 </div>

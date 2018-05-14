@@ -40,12 +40,11 @@ ActiveRecord::Schema.define(version: 20180514060823) do
     t.integer "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
   end
 
   create_table "professors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -110,7 +109,7 @@ ActiveRecord::Schema.define(version: 20180514060823) do
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
