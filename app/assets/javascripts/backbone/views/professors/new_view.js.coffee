@@ -23,7 +23,7 @@ class Edukasyon.Views.Professors.NewView extends Backbone.View
     @collection.create(@model.toJSON(),
       success: (professor) =>
         @model = professor
-        window.location.hash = "/#{@model.id}"
+        window.location.hash = "/index"
 
       error: (professor, jqXHR) =>
         @model.set({errors: $.parseJSON(jqXHR.responseText)})

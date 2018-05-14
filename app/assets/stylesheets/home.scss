@@ -1,7 +1,29 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.rate-description-container
-{
-  padding-top: 10px;
+
+.professor-container {
+  padding: 10px;
+
+  .professor-name-rate {
+    display: -webkit-box;
+    h4 {
+      margin-top: 2px;
+      margin-right: 5px;
+    }
+  }
+
+  .rate-description-container
+  {
+    padding-top: 10px;
+  }
+}
+
+.subject-grid {
+  .subject-card {
+    margin:auto;
+    .subject-info {
+      .title { height: 4em; }
+    }
+  }
 }
