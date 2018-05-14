@@ -6,9 +6,10 @@
       <% professor = professor_subject.professor %>
       <h4><%= professor.full_name %></h4>
       Overall Rating: <%= rating_for professor_subject, "overall_rate", disable_after_rate: false %>
+      <% stud_prof_sub = professor_subject.student_professor_subjects.find_by_student_id(current_student.id) %>
       <div class="rate-description-container">
         <label class="form-control-label" for="student_email">Rate Description</label>
-        <input class="form-control" value="<%= professor_subject.description %>" data-id="<%= professor_subject.id %>" name="student[email]" id="student_email" data-user-id="<%= current_student.id %>">
+        <input class="form-control" value="<%= stud_prof_sub.description %>" data-id="<%= stud_prof_sub.id %>" name="student[email]" id="student_email">
       </div>
     <% end %>
   <% else %>
@@ -21,12 +22,11 @@
   $("input").blur(function(){
       $.ajax({
         type: "PUT",
-        url: "/professor_subjects/" + $(this).attr('data-id') ,
+        url: "/student_professor_subjects/" + $(this).attr('data-id') ,
         data: {
-          professor_subject: {
+          student_professor_subject: {
             id: $(this).attr('data-id'),
-            description: $(this).val(),
-            user_id: $(this).attr('data-user-id')
+            description: $(this).val()
           }
         },
         dataType: "script",

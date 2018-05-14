@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :student_professor_subjects
   resources :professor_subjects
   post '/rate' => 'rater#create', :as => 'rate'
   resources :professors
