@@ -5,20 +5,21 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby and Rails Version
+Rails 5.1.6
 
-* System dependencies
+Ruby 2.3.3
 
-* Configuration
+### Database Creation
 
-* Database creation
+Run the migrations & seed:
+```
+rails db:create db:migrate db:seed
+```
 
-* Database initialization
+Seed will create initial class and initial professor
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+then Run
+```
+Bundle install
+```
